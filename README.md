@@ -1,11 +1,11 @@
 # Research-Track-Assigment-1 description:
 Assignment 1 for Research Track course, the project consist of a simulation in which a robot should complete a track without colliding in gold walls and removes any silver obstacle that face it.
 This repo consits of the following points:
- 1)How to Setup the Simulator.
+ 1)How to Setup the Simulator.\n
  2)How to use the Simulator.
  3)Algotirthm used to solve the probelm and flowchart.
  4)Final output.
- 5)Possible imporovemnts:
+ 5)Possible imporovemnts.
 
 Python Robotics Simulator
 ================================
