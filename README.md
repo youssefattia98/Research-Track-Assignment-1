@@ -102,3 +102,47 @@ Flowchart
 ![immagine](https://github.com/youssefattia98/Research-Track-Assigment-1/blob/main/RTassigment.png)  
 
 The above Flowchart describes in details the working algorithm of the solution. However, some functions needs to be read as script for further understanding how the robot understands its environment and behaves according to this understanding. 
+
+Functions
+---------
+### how_to_turn() ###
+The `how_to_turn()` function is used to see all the tokens around the robot and filter the gold ones, and see the nearest golden token on the robots left and right. by comparing these distances the robot can decide what direction should turn.  
+- Arguments 
+  - None.
+- Returns
+  - Returns direction of the turn either -1 or 1.
+- Code
+```python
+    leastdistr=100
+    leastdistl=100
+
+    #should look all the left and right only the fron ones.
+    for m in R.see():
+        if (m.info.marker_type in (MARKER_TOKEN_GOLD)):
+            if(-105<m.rot_y<-75):
+                #print(" On my left:{0} metres away and {1} degress".format(m.dist, m.rot_y))
+                if(m.dist<leastdistl):
+                    print("the left token distance is: {0}",m.dist)
+                    leastdistl=m.dist
+
+
+
+            if(105>m.rot_y>75):
+                #print(" On my right:{0} metres away and {1} degress".format(m.dist, m.rot_y))
+                if(m.dist<leastdistr):
+                    print("the right token distance is: {0}",m.dist)
+                    leastdistr=m.dist
+
+    if(leastdistr==100):
+        print('i should go anticlockwise')
+        return -1
+    elif(leastdistl==100):
+        print('i should go clockwise')
+        return 1
+    elif(leastdistr>leastdistl):
+        print('i should go clockwise')
+        return 1
+    elif(leastdistr<leastdistl):
+        print('i should go anticlockwise')
+        return -1
+```
