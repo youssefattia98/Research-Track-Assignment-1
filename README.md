@@ -1,4 +1,4 @@
-# Research-Track-Assigment-1 description:
+# Research Track Assigment 1 description:
 Assignment 1 for Research Track course, the project consist of a simulation in which a robot should complete a track without colliding in gold walls and removes any silver obstacle that face it.
 This repo consits of the following points:  
  1)How to Setup the Simulator.  
@@ -246,6 +246,10 @@ The `Turn()` function is used for setting a angular velocity.
 4)Final Output. 
 ================================
 The speed up video below shows the robot behaving in the environment doing its intended task, this simulation can run for ever in which the robot will stay in this loop. Furthermore, this assigment enhanced my skills in using linux, docker, github, python and object oriented progaramming and i am very happy with the output i have reached.
+
+
+https://user-images.githubusercontent.com/69837845/140844584-21148b50-698b-4e8d-8ca1-f7f8610790b7.mp4
+
 
 5)Possible imporovemnts .  
 ================================
