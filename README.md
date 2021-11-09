@@ -252,3 +252,4 @@ The speed up video below shows the robot behaving in the environment doing its i
 I suggest multiple imporvments which are as follow:  
 	1) Apply the function `how to turn()` on the robots motion aroudn the track, this can keep it more safe and avoid collisions as for autonomous cars.  
 	2) Apply a Proportional, Integral, Derivative (PID) controller on the robot so it can make the track in the least possible time and changing its drving 	   and turn speeds according to the feedback of the readings. 
+![immagine](https://blog.west-cs.com/hs-fs/hub/331798/file-489926128-gif/Blog_Pictures/What_is_PID_Control.gif?t=1528717719517)  
