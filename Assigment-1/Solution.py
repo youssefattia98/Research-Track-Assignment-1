@@ -4,9 +4,11 @@ import time
 from sr.robot import *
 
 """
+    This script is intended to drive the robot around the track avoiding crashing to a golden token wall, also the robot should grab any silver
+    token Infront of it and put it behind him.
 
 	When done, run with:
-	$ python2 run.py ass6.py
+	$ python2 run.py Solution.py
 
 """
 a_th = 2.0
@@ -15,25 +17,26 @@ a_th = 2.0
 d_th = 0.4
 """ float: Threshold for the control of the orientation"""
 
-beforehit = 1
+beforehit = 0.75
 """ float: Threshold for the minm distance before hitting gold"""
 
 R = Robot()
 """ instance of the class Robot"""
 
 
-beforehit = 0.75
-""" float: Threshold for the minm distance before hitting gold"""
+
 
 markers = R.see()
 
 
 def drive(speed, seconds):
     """
-    Function for setting a linear velocity
+    Function for setting a linear velocity.
 
-    Args: speed (int): the speed of the wheels
-	  seconds (int): the time interval
+    Args: -speed (int): the speed of the wheels.
+	      -seconds (int): the time interval.
+
+    Return: -None.
     """
     R.motors[0].m0.power = speed
     R.motors[0].m1.power = speed
@@ -43,10 +46,12 @@ def drive(speed, seconds):
 
 def turn(speed, seconds):
     """
-    Function for setting an angular velocity
+    Function for setting an angular velocity.
 
-    Args: speed (int): the speed of the wheels
-	  seconds (int): the time interval
+    Args: -speed (int): the speed of the wheels.
+	      -seconds (int): the time interval.
+          
+    Return: -None.
     """
     R.motors[0].m0.power = speed
     R.motors[0].m1.power = -speed
@@ -55,11 +60,19 @@ def turn(speed, seconds):
     R.motors[0].m1.power = 0
 
 def how_to_turn():
+    """
+    Function is used to see all the tokens around the robot and filter the gold ones,
+    and see the nearest golden token on the robots left and right. by comparing these distances,
+    the robot can decide what direction should turn.
 
+    Args: -None.
+
+    Return: -direction of the turn either -1 or 1.
+    """
     leastdistr=100
     leastdistl=100
 
-    #should look all the left and right only the fron ones.
+    #should look for all the left and right only the gold ones.
     for m in R.see():
         if (m.info.marker_type in (MARKER_TOKEN_GOLD)):
             if(-105<m.rot_y<-75):
@@ -75,18 +88,18 @@ def how_to_turn():
                 if(m.dist<leastdistr):
                     print("the right token distance is: {0}",m.dist)
                     leastdistr=m.dist
-
+    #The first two condtions are for error handling.
     if(leastdistr==100):
-        print('i should go anticlockwise')
+        print('i should rotate anticlockwise')
         return -1
     elif(leastdistl==100):
-        print('i should go clockwise')
+        print('i should rotate clockwise')
         return 1
     elif(leastdistr>leastdistl):
-        print('i should go clockwise')
+        print('i should rotate clockwise')
         return 1
     elif(leastdistr<leastdistl):
-        print('i should go anticlockwise')
+        print('i should rotate anticlockwise')
         return -1
 
 def find_silver_token():
@@ -126,6 +139,13 @@ def find_golden_token():
         return dist, rot_y
 
 def silvernear():
+    """
+    function is used to head the robot towards the silver token, grab it and drop it behind the robot.
+
+    Args: -None.
+
+    Return: -None.
+    """
     if (sa<-a_th):
         print("Left a bit...")
         turn(-2, 0.5)
@@ -136,23 +156,16 @@ def silvernear():
         print("Ah, that'll do.")
         drive(25, 0.5)
     if(sd<d_th):
-        gotit()
-
-def gotit():
-    """
-    function to react to silver token found
-
-    """
-    R.grab()
-    print("Gotcha!")
-    turn(20, 3)
-    R.release()
-    turn(-20,3)
+        R.grab()
+        print("Gotcha!")
+        turn(20, 3)
+        R.release()
+        turn(-20,3)
 
 
 
 
-drive(50,2)
+drive(50,2) #to guide the robot for doing a counter-clock wise rotation around the arena.
 while 1:
     sd, sa = find_silver_token()
     gd, ga = find_golden_token()
@@ -187,5 +200,5 @@ while 1:
 
 
     else:
-        print('last conditon')
+        print('I am safe,i can drive')
         drive(50,0.25)
