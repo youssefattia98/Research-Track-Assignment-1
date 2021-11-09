@@ -116,7 +116,7 @@ The `how_to_turn()` function is used to see all the tokens around the robot and 
     leastdistr=100
     leastdistl=100
 
-    #should look all the left and right only the fron ones.
+    #should look all the left and right only the gold ones.
     for m in R.see():
         if (m.info.marker_type in (MARKER_TOKEN_GOLD)):
             if(-105<m.rot_y<-75):
@@ -132,17 +132,17 @@ The `how_to_turn()` function is used to see all the tokens around the robot and 
                 if(m.dist<leastdistr):
                     print("the right token distance is: {0}",m.dist)
                     leastdistr=m.dist
-
+    #The first two condtions are for error handling.
     if(leastdistr==100):
-        print('i should go anticlockwise')
+        print('i should rotate anticlockwise')
         return -1
     elif(leastdistl==100):
-        print('i should go clockwise')
+        print('i should rotate clockwise')
         return 1
     elif(leastdistr>leastdistl):
-        print('i should go clockwise')
+        print('i should rotate clockwise')
         return 1
     elif(leastdistr<leastdistl):
-        print('i should go anticlockwise')
+        print('i should rotate anticlockwise')
         return -1
 ```
