@@ -146,3 +146,32 @@ The `how_to_turn()` function is used to see all the tokens around the robot and 
         print('i should rotate anticlockwise')
         return -1
 ```
+### silvernear() ###
+The `silvernear()` function is used to head the robot towards the silver token, grab it and drop it behind the robot.
+
+- Arguments 
+  - None.
+- Returns
+  - None.
+- Code
+```python
+    """
+    function to react to silver token found
+
+    """
+    if (sa<-a_th):
+        print("Left a bit...")
+        turn(-2, 0.5)
+    elif(sa>a_th):
+        print("Right a bit...")
+        turn(+2, 0.5)
+    elif (-a_th<= sa <= a_th):
+        print("Ah, that'll do.")
+        drive(25, 0.5)
+    if(sd<d_th):
+        R.grab()
+        print("Gotcha!")
+        turn(20, 3)
+        R.release()
+        turn(-20,3)
+```
