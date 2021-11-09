@@ -96,4 +96,9 @@ for m in markers:
 3)Algotirthm used to solve the probelm and flowchart. 
 ================================
 There are plenty of Algorithms that can be used to solve this assigment which i have tried more one algorithms, all previous trials can be found in the folder Solutions. However, the most efficient algorithm by far is used in the solution, in whitch the robot turn according to his ditance with the right wall and left wall same as autonomous cars algorithm to follow a lane. This will be explained more further down bellow, in the meantime thwe most challings part of the script is how the robot decides which direction it should turn.  
-![immagine](https://github.com/youssefattia98/Research-Track-Assigment-1/blob/main/RTassigment.png)
+
+Flowchart
+---------
+![immagine](https://github.com/youssefattia98/Research-Track-Assigment-1/blob/main/RTassigment.png)  
+
+The above Flowchart describes in details the working algorithm of the solution. However, some functions needs to be read as script for further understanding how the robot understands its environment and behaves according to this understanding. 
