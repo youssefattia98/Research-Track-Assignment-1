@@ -26,6 +26,7 @@ Once the dependencies are installed, get inside the directory on the shell. To r
 
 ```bash
 $ python2 run.py Solution.py
+```
 
 Robot API
 ---------
