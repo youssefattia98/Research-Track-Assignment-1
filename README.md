@@ -243,11 +243,12 @@ The `Turn()` function is used for setting a angular velocity.
     R.motors[0].m0.power = 0
     R.motors[0].m1.power = 0
 ```
-4)Final Output.  
+4)Final Output. 
 ================================
 The speed up video below shows the robot behaving in the environment doing its intended task, this simulation can run for ever in which the robot will stay in this loop. Furthermore, this assigment enhanced my skills in using linux, docker, github, python and object oriented progaramming and i am very happy with the output i have reached.
-4)Possible imporovemnts .  
+
+5)Possible imporovemnts .  
 ================================
 I suggest multiple imporvments which are as follow:  
-	1) Apply the function `how to turn()` on the robots motion aroudn the track, this can keep it more safe and avoid collisions as for autonomous cars.
+	1) Apply the function `how to turn()` on the robots motion aroudn the track, this can keep it more safe and avoid collisions as for autonomous cars.  
 	2) Apply a Proportional, Integral, Derivative (PID) controller on the robot so it can make the track in the least possible time and changing its drving 	   and turn speeds according to the feedback of the readings. 
