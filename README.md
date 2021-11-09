@@ -18,39 +18,14 @@ Installing and running
 The simulator requires a Python 2.7 installation, the [pygame](http://pygame.org/) library, [PyPyBox2D](https://pypi.python.org/pypi/pypybox2d/2.1-r331), and [PyYAML](https://pypi.python.org/pypi/PyYAML/).
 
 ```bash
-$ sudo apt-get install python-dev python-pip python-pygame python-yaml`
-```
-
-``` bash
-$ sudo pip install pypybox2d`
+$ sudo apt-get install python-dev python-pip python-pygame python-yaml
+$ sudo pip install pypybox2d
 ```
 
 Once the dependencies are installed, get inside the directory on the shell. To run the game, run the command:
 
 ```bash
-$ python2 run.py assignment.py`
-
-Once the dependencies are installed, simply run the `test.py` script to test out the simulator.
-
-## Exercise
------------------------------
-
-To run one or more scripts in the simulator, use `run.py`, passing it the file names. 
-
-I am proposing you three exercises, with an increasing level of difficulty.
-The instruction for the three exercises can be found inside the .py files (exercise1.py, exercise2.py, exercise3.py).
-
-When done, you can run the program with:
-
-```bash
-$ python run.py exercise1.py
-```
-
-You have also the solutions of the exercises (folder solutions)
-
-```bash
-$ python run.py solutions/exercise1_solution.py
-```
+$ python2 run.py Solution.py
 
 Robot API
 ---------
