@@ -27,7 +27,7 @@ Once the dependencies are installed, get inside the directory on the shell. To r
 ```bash
 $ python2 run.py Solution.py
 ```
-##2)How to use the Simulator.  
+2)How to use the Simulator.  
 ================================
 Robot API
 ---------
@@ -93,6 +93,7 @@ for m in markers:
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
 
-##3)Algotirthm used to solve the probelm and flowchart. 
+3)Algotirthm used to solve the probelm and flowchart. 
 ================================
 There are plenty of Algorithms that can be used to solve this assigment which i have tried more one algorithms, all previous trials can be found in the folder Solutions. However, the most efficient algorithm by far is used in the solution, in whitch the robot turn according to his ditance with the right wall and left wall same as autonomous cars algorithm to follow a lane. This will be explained more further down bellow, in the meantime thwe most challings part of the script is how the robot decides which direction it should turn.  
+![immagine](https://github.com/youssefattia98/Research-Track-Assigment-1/blob/main/RTassigment.png)
