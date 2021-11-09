@@ -175,3 +175,71 @@ The `silvernear()` function is used to head the robot towards the silver token, 
         R.release()
         turn(-20,3)
 ```
+### find_silver_token() ###
+The `silvernear()` function is used to find the closest silver token.
+- Arguments 
+  - None.
+- Returns
+  - dist (float): distance of the closest silver token (-1 if no silver token is detected)
+	 -rot_y (float): angle between the robot and the silver token (-1 if no silver token is detected)
+- Code
+```python
+    dist=100
+    for token in R.see():
+        if ((token.dist < dist) and (token.info.marker_type is MARKER_TOKEN_SILVER)):
+            dist=token.dist
+	    rot_y=token.rot_y
+    if dist==100:
+        return None
+    else:
+        return dist, rot_y
+```
+### find_golden_token() ###
+The `silvernear()` function is used to find the closest golden token.
+- Arguments 
+  - None.
+- Returns
+  - dist (float): distance of the closest silver token (-1 if no silver token is detected)
+	 -rot_y (float): angle between the robot and the silver token (-1 if no silver token is detected)
+- Code
+```python
+    dist=100
+    for token in R.see():
+        if ((token.dist < dist) and (token.info.marker_type is MARKER_TOKEN_GOLD)):
+            dist=token.dist
+	    rot_y=token.rot_y
+    if dist==100:
+        return -1, -1
+    else:
+        return dist, rot_y
+```
+### drive() ###
+The `drive()` function is used for setting a linear velocity.
+- Arguments 
+  - speed (int): the speed of the wheels.
+  - seconds (int): the time interval.
+- Returns
+  - None.
+- Code
+```python
+     R.motors[0].m0.power = speed
+    R.motors[0].m1.power = speed
+    time.sleep(seconds)
+    R.motors[0].m0.power = 0
+    R.motors[0].m1.power = 0
+```
+### Turn() ###
+The `Turn()` function is used for setting a angular velocity.
+- Arguments 
+  - speed (int): the speed of the wheels.
+  - seconds (int): the time interval.
+- Returns
+  - None.
+- Code
+```python
+    R.motors[0].m0.power = speed
+    R.motors[0].m1.power = -speed
+    time.sleep(seconds)
+    R.motors[0].m0.power = 0
+    R.motors[0].m1.power = 0
+```
