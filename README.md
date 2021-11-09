@@ -1,16 +1,16 @@
-# Research Track Assigment 1 description:
-Assignment 1 for Research Track course, the project consist of a simulation in which a robot should complete a track without colliding in gold walls and removes any silver obstacle that face it.
-This repo consits of the following points:  
+# Research Track Assignment 1 description:
+Assignment 1 for Research Track course, the project consists of a simulation in which a robot should complete a track without colliding in gold walls and removes any silver obstacle that face it.
+This repo consists of the following points:  
  1)How to Setup the Simulator.  
  2)How to use the Simulator.  
- 3)Algotirthm used to solve the probelm and flowchart.  
+ 3)Algorithm used to solve the problem and flowchart.  
  4)Final output.  
- 5)Possible imporovemnts.  
+ 5)Possible improvements.  
 
 1)How to Setup the Simulator.  
 ================================
 
-Firstly,this is a simple portable robot simulator developed by [Student Robotics](https://studentrobotics.org).
+Firstly, this is a simple portable robot simulator developed by [Student Robotics] (https://studentrobotics.org).
 
 Installing and running
 ----------------------
@@ -47,7 +47,7 @@ R.motors[0].m1.power = -25
 
 ### The Grabber ###
 
-The robot is equipped with a grabber, capable of picking up a token which is in front of the robot and within 0.4 metres of the robot's centre. To pick up a token, call the `R.grab` method:
+The robot is equipped with a grabber, capable of picking up a token which is in front of the robot and within 0.4 meters of the robot's center. To pick up a token, call the `R.grab` method:
 
 ```python
 success = R.grab()
@@ -71,7 +71,7 @@ Each `Marker` object has the following attributes:
   * `offset`: offset of the numeric code of the marker from the lowest numbered marker of its type. For example, token number 3 has the code 43, but offset 3.
   * `size`: the size that the marker would be in the real game, for compatibility with the SR API.
 * `centre`: the location of the marker in polar coordinates, as a `PolarCoord` object. Has the following attributes:
-  * `length`: the distance from the centre of the robot to the object (in metres).
+  * `length`: the distance from the center of the robot to the object (in meters).
   * `rot_y`: rotation about the Y axis in degrees.
 * `dist`: an alias for `centre.length`
 * `res`: the value of the `res` parameter of `R.see`, for compatibility with the SR API.
@@ -93,20 +93,20 @@ for m in markers:
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
 
-3)Algotirthm used to solve the probelm and flowchart. 
+3)Algorithm used to solve the problem and flowchart. 
 ================================
-There are plenty of Algorithms that can be used to solve this assigment which i have tried more one algorithms, all previous trials can be found in the folder Solutions. However, the most efficient algorithm by far is used in the solution, in whitch the robot turn according to his ditance with the right wall and left wall same as autonomous cars algorithm to follow a lane. This will be explained more further down bellow, in the meantime thwe most challings part of the script is how the robot decides which direction it should turn.  
+There are plenty of Algorithms that can be used to solve this assignment which I have tried more one algorithm, all previous trials can be found in the folder Solutions. However, the most efficient algorithm by far is used in the solution, in which the robot turns according to his distance with the right wall and left wall same as autonomous cars algorithm to follow a lane. This will be explained more further down below, in the meantime the most challenging part of the script is how the robot decides which direction it should turn.  
 
 Flowchart
 ---------
 ![immagine](https://github.com/youssefattia98/Research-Track-Assigment-1/blob/main/RTassigment.png)  
 
-The above Flowchart describes in details the working algorithm of the solution. However, some functions needs to be read as script for further understanding how the robot understands its environment and behaves according to this understanding. 
+The above Flowchart describes in details the working algorithm of the solution. However, some functions need to be read as script for further understanding how the robot understands its environment and behaves according to this understanding. 
 
 Functions
 ---------
 ### how_to_turn() ###
-The `how_to_turn()` function is used to see all the tokens around the robot and filter the gold ones, and see the nearest golden token on the robots left and right. by comparing these distances the robot can decide what direction should turn.  
+The `how_to_turn()` function is used to see all the tokens around the robot and filter the gold ones, and see the nearest golden token on the robots left and right. by comparing these distances, the robot can decide what direction should turn.  
 - Arguments 
   - None.
 - Returns
@@ -116,7 +116,7 @@ The `how_to_turn()` function is used to see all the tokens around the robot and 
     leastdistr=100
     leastdistl=100
 
-    #should look all the left and right only the gold ones.
+    #Should look all the left and right only the gold ones.
     for m in R.see():
         if (m.info.marker_type in (MARKER_TOKEN_GOLD)):
             if(-105<m.rot_y<-75):
@@ -245,15 +245,15 @@ The `Turn()` function is used for setting a angular velocity.
 ```
 4)Final Output. 
 ================================
-The speed up video below shows the robot behaving in the environment doing its intended task, this simulation can run for ever in which the robot will stay in this loop. Furthermore, this assigment enhanced my skills in using linux, docker, github, python and object oriented progaramming and i am very happy with the output i have reached.
+The speed up video below shows the robot behaving in the environment doing its intended task, this simulation can run for ever in which the robot will stay in this loop. Furthermore, this assignment enhanced my skills in using Linux, docker, GitHub, python and object-oriented programming and I am very happy with the output I have reached.
 
 
 https://user-images.githubusercontent.com/69837845/140844584-21148b50-698b-4e8d-8ca1-f7f8610790b7.mp4
 
 
-5)Possible imporovemnts .  
+5)Possible improvements.  
 ================================
-I suggest multiple imporvments which are as follow:  
-	1) Apply the function `how to turn()` on the robots motion aroudn the track, this can keep it more safe and avoid collisions as for autonomous cars.  
-	2) Apply a Proportional, Integral, Derivative (PID) controller on the robot so it can make the track in the least possible time and changing its drving 	   and turn speeds according to the feedback of the readings. 
+I suggest multiple improvements which are as follow:  
+	1) Apply the function `how to turn()` on the robots motion around the track, this can keep it more safe and avoid collisions as for autonomous cars.  
+	2) Apply a Proportional, Integral, Derivative (PID) controller on the robot so it can make the track in the least possible time and changing its driving 	   and turn speeds according to the feedback of the readings. 
 			![immagine](https://blog.west-cs.com/hs-fs/hub/331798/file-489926128-gif/Blog_Pictures/What_is_PID_Control.gif?t=1528717719517)  
