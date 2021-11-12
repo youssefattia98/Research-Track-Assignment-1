@@ -246,11 +246,12 @@ The `Turn()` function is used for setting a angular velocity.
 4)Final Output. 
 ================================
 The speed up video below shows the robot behaving in the environment doing its intended task, this simulation can run for ever in which the robot will stay in this loop. Furthermore, this assignment enhanced my skills in using Linux, docker, GitHub, python and object-oriented programming and I am very happy with the output I have reached.
+Finally, I really wanted to mention how much I enjoyed working on this project and helping my collages it enhanced my teaching skills too which I truly wanted to work on.  
+
 
 
 https://user-images.githubusercontent.com/69837845/140844584-21148b50-698b-4e8d-8ca1-f7f8610790b7.mp4
 
-##Finally, I really wanted to mention how much I enjoyed working on this project and helping my collages it enhanced my teaching skills too which I truly wanted to work on.  
 5)Possible improvements.  
 ================================
 I suggest multiple improvements which are as follow:  
