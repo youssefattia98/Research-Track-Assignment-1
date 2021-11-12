@@ -250,7 +250,7 @@ The speed up video below shows the robot behaving in the environment doing its i
 
 https://user-images.githubusercontent.com/69837845/140844584-21148b50-698b-4e8d-8ca1-f7f8610790b7.mp4
 
-Finally, I really wanted to mention how much I enjoyed working on this project and helping my collages it enhanced my teaching skills too which I truly wanted to work on.  
+##Finally, I really wanted to mention how much I enjoyed working on this project and helping my collages it enhanced my teaching skills too which I truly wanted to work on.  
 5)Possible improvements.  
 ================================
 I suggest multiple improvements which are as follow:  
