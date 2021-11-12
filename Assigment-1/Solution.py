@@ -78,7 +78,7 @@ def how_to_turn():
             if(-105<m.rot_y<-75):
                 #print(" On my left:{0} metres away and {1} degress".format(m.dist, m.rot_y))
                 if(m.dist<leastdistl):
-                    print("the left token distance is: {0}",m.dist)
+                    #print("the left token distance is: {0}",m.dist)
                     leastdistl=m.dist
 
 
@@ -86,20 +86,20 @@ def how_to_turn():
             if(105>m.rot_y>75):
                 #print(" On my right:{0} metres away and {1} degress".format(m.dist, m.rot_y))
                 if(m.dist<leastdistr):
-                    print("the right token distance is: {0}",m.dist)
+                    #print("the right token distance is: {0}",m.dist)
                     leastdistr=m.dist
     #The first two condtions are for error handling.
-    if(leastdistr==100):
-        print('i should rotate anticlockwise')
-        return -1
-    elif(leastdistl==100):
-        print('i should rotate clockwise')
-        return 1
-    elif(leastdistr>leastdistl):
-        print('i should rotate clockwise')
+    # if(leastdistr==100):
+    #     print('I should rotate anticlockwise')
+    #     return -1
+    # elif(leastdistl==100):
+    #     print('I should rotate clockwise')
+    #     return 1
+    if(leastdistr>leastdistl):
+        print('I should rotate clockwise')
         return 1
     elif(leastdistr<leastdistl):
-        print('i should rotate anticlockwise')
+        print('I should rotate anticlockwise')
         return -1
 
 def find_silver_token():
@@ -170,21 +170,11 @@ while 1:
     sd, sa = find_silver_token()
     gd, ga = find_golden_token()
 
-    if(gd>beforehit):
-        print('gold is far')
-        if(sd<1 and (-60 < sa < 60)):
-            print('silver is in sight')
-            silvernear()
-        else:
-            print('silver not in sight')
-            drive(25,0.5)
 
-
-
-    elif(gd<=beforehit and (-90<= ga <=90)):
+    if(gd<=beforehit and (abs(ga) <=90)):
         print('gold is near stoping')
 
-        if(sd<2 and (-60 < sa < 60)):
+        if(sd<2 and (abs(sa) < 60)):
             print('silver is in sight')
             silvernear()
 
@@ -194,11 +184,14 @@ while 1:
             while(abs(ga)<80):
                 turn(dir*10,0.5)
                 gd, ga = find_golden_token()
-                print(ga)
             drive(25,0.5)
 
 
-
     else:
-        print('I am safe,i can drive')
-        drive(50,0.25)
+        print('gold is far')
+        if(sd<1 and (abs(sa) < 60)):
+            print('silver is in sight')
+            silvernear()
+        else:
+            print('silver not in sight')
+            drive(25,0.5)

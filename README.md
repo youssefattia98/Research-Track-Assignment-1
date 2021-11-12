@@ -181,14 +181,14 @@ The `silvernear()` function is used to find the closest silver token.
   - None.
 - Returns
   - dist (float): distance of the closest silver token (-1 if no silver token is detected)
-	 -rot_y (float): angle between the robot and the silver token (-1 if no silver token is detected)
+     -rot_y (float): angle between the robot and the silver token (-1 if no silver token is detected)
 - Code
 ```python
     dist=100
     for token in R.see():
         if ((token.dist < dist) and (token.info.marker_type is MARKER_TOKEN_SILVER)):
             dist=token.dist
-	    rot_y=token.rot_y
+        rot_y=token.rot_y
     if dist==100:
         return None
     else:
@@ -200,14 +200,14 @@ The `silvernear()` function is used to find the closest golden token.
   - None.
 - Returns
   - dist (float): distance of the closest silver token (-1 if no silver token is detected)
-	 -rot_y (float): angle between the robot and the silver token (-1 if no silver token is detected)
+     -rot_y (float): angle between the robot and the silver token (-1 if no silver token is detected)
 - Code
 ```python
     dist=100
     for token in R.see():
         if ((token.dist < dist) and (token.info.marker_type is MARKER_TOKEN_GOLD)):
             dist=token.dist
-	    rot_y=token.rot_y
+        rot_y=token.rot_y
     if dist==100:
         return -1, -1
     else:
@@ -250,10 +250,10 @@ The speed up video below shows the robot behaving in the environment doing its i
 
 https://user-images.githubusercontent.com/69837845/140844584-21148b50-698b-4e8d-8ca1-f7f8610790b7.mp4
 
-
+Finally, I really wanted to mention how much I enjoyed working on this project and helping my collages it enhanced my teaching skills too which I truly wanted to work on.  
 5)Possible improvements.  
 ================================
 I suggest multiple improvements which are as follow:  
-	1) Apply the function `how to turn()` on the robots motion around the track, this can keep it more safe and avoid collisions as for autonomous cars.  
-	2) Apply a Proportional, Integral, Derivative (PID) controller on the robot so it can make the track in the least possible time and changing its driving 	   and turn speeds according to the feedback of the readings. 
-			![immagine](https://blog.west-cs.com/hs-fs/hub/331798/file-489926128-gif/Blog_Pictures/What_is_PID_Control.gif?t=1528717719517)  
+    1) Apply the function `how to turn()` on the robots motion around the track, this can keep it more safe and avoid collisions as for autonomous cars.  
+    2) Apply a Proportional, Integral, Derivative (PID) controller on the robot so it can make the track in the least possible time and changing its driving       and turn speeds according to the feedback of the readings. 
+            ![immagine](https://blog.west-cs.com/hs-fs/hub/331798/file-489926128-gif/Blog_Pictures/What_is_PID_Control.gif?t=1528717719517)  
