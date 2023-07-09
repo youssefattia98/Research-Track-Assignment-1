@@ -1,5 +1,5 @@
-# Research Track Assignment 1 description:
-Assignment 1 for Research Track course, the project consists of a simulation in which a robot should complete a track without colliding in gold walls and removes any silver obstacle that face it.
+# Gold Hunter description:
+The project consists of a simulation in which a robot should complete a track without colliding in gold walls and removes any silver obstacle that face it.
 This repo consists of the following points:  
  1)How to Setup the Simulator.  
  2)How to use the Simulator.  
@@ -95,7 +95,7 @@ for m in markers:
 
 3)Algorithm used to solve the problem and flowchart. 
 ================================
-There are plenty of Algorithms that can be used to solve this assignment which I have tried more one algorithm, all previous trials can be found in the folder Solutions. However, the most efficient algorithm by far is used in the solution, in which the robot turns according to his distance with the right wall and left wall same as autonomous cars algorithm to follow a lane. This will be explained more further down below, in the meantime the most challenging part of the script is how the robot decides which direction it should turn.  
+There are plenty of Algorithms that can be used to solve this problem which I have tried more one algorithm, all previous trials can be found in the folder Solutions. However, the most efficient algorithm by far is used in the solution, in which the robot turns according to his distance with the right wall and left wall same as autonomous cars algorithm to follow a lane. This will be explained more further down below, in the meantime the most challenging part of the script is how the robot decides which direction it should turn.  
 
 Flowchart
 ---------
@@ -245,7 +245,7 @@ The `Turn()` function is used for setting a angular velocity.
 ```
 4)Final Output. 
 ================================
-The speed up video below shows the robot behaving in the environment doing its intended task, this simulation can run for ever in which the robot will stay in this loop. Furthermore, this assignment enhanced my skills in using Linux, docker, GitHub, python and object-oriented programming and I am very happy with the output I have reached.
+The speed up video below shows the robot behaving in the environment doing its intended task, this simulation can run for ever in which the robot will stay in this loop. Furthermore, this project enhanced my skills in using Linux, docker, GitHub, python and object-oriented programming and I am very happy with the output I have reached.
 Finally, I really wanted to mention how much I enjoyed working on this project and helping my collages it enhanced my teaching skills too which I truly wanted to work on.  
 
 
